@@ -1,0 +1,78 @@
+.sf-container {
+  background-color: #eee;
+}
+
+.info-wrapper {
+  border: 2px solid rebeccapurple;
+}
+
+.info-field-title {
+  font-weight: bold;
+  color: rebeccapurple;
+}
+
+.btn-purple {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: purple;
+}
+
+.btn-purple:focus {
+  box-shadow: none;
+  background-color: purple;
+}
+
+.btn-purple:active {
+  box-shadow: none;
+  background-color: rebeccapurple;
+}
+
+.sf-card {
+  border-radius: 0px;
+}
+
+.sf-card-header {
+  background-color: rebeccapurple;
+  color: white;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.sf-card-title {
+  margin-bottom: 0;
+}
+
+.sf-card-status-approved {
+  color: purple !important;
+}
+
+.sf-card-status-completed {
+  color: green !important;
+}
+
+.sf-card-status-requesting {
+  color: orange !important;
+}
+
+.btn-inactive {
+  background-color: gray;
+  pointer-events: none;
+  cursor: auto;
+}
+
+.section title {
+  text-align: center !important;
+}
+
+.sf-inpage-link {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.sf-inpage-link:hover {
+  color: rebeccapurple;
+}

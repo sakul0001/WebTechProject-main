@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>SuperFrog Scheduler</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+
+</head>
+<body>
+
+    <main>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">SuperFrog Scheduler</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request.html">Request</a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <div class="dropdown dropleft">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="login.html">Login</a>
+                            <a class="dropdown-item" href="login.html">Create Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <div class="container py-4">
+                <h1 class="display-3">Event Title</h1>
+                <p class="lead">By Contact Name</p>
+                <hr class="my-2">
+                <p>Event code // Event Date</p>
+            </div>
+        </div>
+        <div>
+            <div class="container align-center my-3 py-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Contact Person</h4>
+                                <hr class="my-2">
+                                <p class="card-text">Name</p>
+                                <p>Phone Number</p>
+                                <p>Email</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Event Details</h4>
+                                <hr class="my-2">
+                                <p class="card-text">Date</p>
+                                <p>Start Time</p>
+                                <p>End Time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Event Location</h4>
+                                <hr class="my-2">
+                                <p class="card-text">Location</p>
+                                <p>Address</p>
+                                <p>Address</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 my-4">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Event Description</h4>
+                                <hr class="my-2">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+                                    quos accusantium temporibus ea quibusdam ducimus corrupti sunt deleniti molestiae
+                                    fugiat est ex quasi quas architecto, quaerat velit optio culpa, modi doloremque
+                                    delectus sit quia itaque quisquam? Aut repudiandae saepe accusamus, obcaecati
+                                    impedit voluptate sit dolorem. Adipisci commodi blanditiis officia exercitationem.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 my-4">
+                        <div class="card text-left shadow">
+                            <div class="card-body">
+                                <h4 class="card-title">Event Instructions</h4>
+                                <hr class="my-2">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+                                    quos accusantium temporibus ea quibusdam ducimus corrupti sunt deleniti molestiae
+                                    fugiat est ex quasi quas architecto, quaerat velit optio culpa, modi doloremque
+                                    delectus sit quia itaque quisquam? Aut repudiandae saepe accusamus, obcaecati
+                                    impedit voluptate sit dolorem. Adipisci commodi blanditiis officia exercitationem.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

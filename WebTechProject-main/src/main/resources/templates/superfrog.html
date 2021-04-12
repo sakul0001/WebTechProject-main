@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../../../../../SuperFrogProject/springbootproject/src/main/resources/templates/assets/superfrog.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function onSignUp() {
+        alert('Sign up successfully')
+      }
+      function onComplete() {
+        alert('Mark as completed successfully')
+      }
+    </script>
+    <div class="container">
+      <div class="sf-container d-flex p-4 mb-5">
+        <img src="../../../../../../SuperFrogProject/springbootproject/src/main/resources/templates/assets/superfrog.png" alt="" />
+        <div class="d-flex flex-column">
+          <h1>Welcome SuperFrog</h1>
+          <h2 class="mb-4">Here's a place to manage your work</h2>
+          <div class="info-wrapper d-flex flex-column p-5" th:object="${user}">
+            <h3 class="align-self-center mb-3">Personal Information</h3>
+            <div class="info-item" >
+              <span class="info-field-title">Name: </span>
+              <span th:text="*{username}">SuperFrog1</span>
+            </div>
+            <div class="info-item">
+              <span class="info-field-title">Email: </span>
+              <span th:text="*{email}">superfrog@gmail.com</span>
+            </div>
+            <button class="btn btn-purple mt-4" data-toggle="modal"
+            data-target="#editModal">Edit</button>
+          </div>
+          <div class="row mt-4">
+            <div class="col-6">
+              <a href="#openEvents" class="sf-inpage-link">
+                Open Events
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="#eventSchedule" class="sf-inpage-link">Event Schedule</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="editModal"
+          tabindex="-1"
+          aria-labelledby="editModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">
+                  Edit your information
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form th:object="${user}" th:action="@{/superfrog}" method="post">
+                  <div class="form-group">
+                    <label for="editUsername">Username</label>
+                    <input
+                      type="text"
+                      class="form-control input-sf"
+                      id="editUsername"
+                      aria-describedby="usernameHelp"
+                      th:attr="value = *{username}"
+                      
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input
+                      type="email"
+                      class="form-control input-sf"
+                      id="editEmail"
+                      aria-describedby="emailHelp"
+                      th:attr="value = *{email}"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-sf-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-purple"
+                  data-dismiss="modal"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5" id="openEvents">
+        <h1 class="mb-4 d-flex justify-content-center">
+          <span>Open Events</span></h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Events</th>
+              <th scope="col">Date</th>
+              <th scope="col">Location</th>
+              <th scope="col">Mileage</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wedding</td>
+              <td>Jun 16, 2021</td>
+              <td>3000 Stadium Dr</td>
+              <td>6 miles</td>
+              <td><button class="btn btn-purple" onclick="onSignUp()">Sign up</button></td>
+            </tr>
+            <tr>
+              <td>Charity</td>
+              <td>Jun 17, 2021</td>
+              <td>3000 Stadium Dr</td>
+              <td>6 miles</td>
+              <td><button class="btn btn-purple" onclick="onSignUp()">Sign up</button></td>
+            </tr>
+            <tr>
+              <td>Football vs The Long Horns</td>
+              <td>Jun 18, 2021</td>
+              <td>3000 Stadium Dr</td>
+              <td>6 miles</td>
+              <td><button class="btn btn-purple" onclick="onSignUp()">Sign up</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mb-5" id="eventSchedule">
+        <h1 class="mb-4 d-flex justify-content-center">
+          <span>Your events schedule</span></h1>
+        <div class="row pb-4">
+          <div class="col-3 px-2">
+            <div class="card sf-card">
+              <div class="card-header sf-card-header">
+                <div class="sf-card-title">Wedding</div>
+              </div>
+              <div class="card-body">
+                <h6 class="card-subtitle sf-card-status-approved mb-2 text-muted">
+                  Approved
+                </h6>
+                <p class="card-text">
+                  <div class="info-item">
+                    <span class="info-field-title">Date: </span>
+                    <span>May 20, 2021</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Location: </span>
+                    <span>2908 Stadium Dr</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Mileage: </span>
+                    <span>5 miles</span>
+                  </div>
+                </p>
+                <div class="d-flex justify-content-center">
+                <button class="btn btn-purple" onclick="onComplete()">Mark as Completed</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3 px-2">
+            <div class="card sf-card">
+              <div class="card-header sf-card-header">
+                <div class="sf-card-title">Charity</div>
+              </div>
+              <div class="card-body">
+                <h6 class="card-subtitle sf-card-status-completed mb-2 text-muted">
+                  Completed
+                </h6>
+                <p class="card-text">
+                  <div class="info-item">
+                    <span class="info-field-title">Date: </span>
+                    <span>May 20, 2021</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Location: </span>
+                    <span>2908 Stadium Dr</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Mileage: </span>
+                    <span>5 miles</span>
+                  </div>
+                </p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-purple btn-inactive">Mark as Completed</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3 px-2">
+            <div class="card sf-card">
+              <div class="card-header sf-card-header">
+                <div class="sf-card-title">Football</div>
+              </div>
+              <div class="card-body">
+                <h6 class="card-subtitle sf-card-status-completed mb-2 text-muted">
+                  Completed
+                </h6>
+                <p class="card-text">
+                  <div class="info-item">
+                    <span class="info-field-title">Date: </span>
+                    <span>May 20, 2021</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Location: </span>
+                    <span>2908 Stadium Dr</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Mileage: </span>
+                    <span>5 miles</span>
+                  </div>
+                </p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-purple btn-inactive">Mark as Completed</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3 px-2">
+            <div class="card sf-card">
+              <div class="card-header sf-card-header">
+                <div class="sf-card-title">Basketball</div>
+              </div>
+              <div class="card-body">
+                <h6 class="card-subtitle sf-card-status-requesting mb-2 text-muted">
+                  Requesting
+                </h6>
+                <p class="card-text">
+                  <div class="info-item">
+                    <span class="info-field-title">Date: </span>
+                    <span>May 20, 2021</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Location: </span>
+                    <span>2908 Stadium Dr</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-field-title">Mileage: </span>
+                    <span>5 miles</span>
+                  </div>
+                </p>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-purple btn-inactive">Mark as Completed</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
